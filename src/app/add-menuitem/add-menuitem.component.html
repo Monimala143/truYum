@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col md-4">
+            <h3 style="font-family: sans-serif;">Edit Menu Item</h3>
+            <form>
+                <div class="form-row">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                        <label for="">Item Name</label>
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="menuitem.name"/>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="id">Item Id</label>
+                        <input type="number" class="form-control" id="id" name="id"  [(ngModel)]="menuitem.id"/>
+                    </div>
+                </div>
+                <div class="form-row" style="text-align:left;">
+                    <div class="col-md-3 mb-3">
+                        <label for="" name="price">Price</label>
+                        <input type="number" id="price" name="price" class="form-control"  [(ngModel)]="menuitem.price" required/>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="dateOfLaunch" name="dateOfLaunch">Date of Launch</label>
+                        <input type="text" name="dateOfLaunch" class="form-control" id="dateOfLaunch"  [(ngModel)]="menuitem.dateOfLaunch" required/>
+                        <script> 
+                            $('#dateOfLaunch').datepicker({ 
+                              uiLibrary: 'bootstrap4', 
+                              format: 'dd/mm/yyyy' 
+                            });
+                        </script>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="" name="category">Category</label>
+                        <select id="category" name="category" class="form-control"  [(ngModel)]="menuitem.category">
+                            <option value="">Select Category </option>
+                            <option value="Main Cousre">Main Cousre </option>
+                            <option value="Starter">Starter</option>
+                            <option value="Dessert">Dessert </option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 mb-3">                            
+                        <label for="" name="active">Active</label>
+                        <br>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="active" id="yes" value="yes" [(ngModel)]="menuitem.active"/>
+                            <label for="yes" class="custom-control-label">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="active" id="no" value="no"/>
+                            <label for="no" class="custom-control-label">No</label>
+                        </div>                  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="freeDelivery" value="" class="form-check-input"  [(ngModel)]="menuitem.freeDelivery"/>
+                    <label for="freeDelivery" class="form-check-label">Free Delivery</label><br>
+                </div>
+                <div class="form-group">
+                    <label for="">Enter Image url</label>
+                    <input type="url" class="form-control" id="imageURL" name="imageURL"  [(ngModel)]="menuitem.imageURL"/>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-danger" value ="Save" name="submit" id="button" >
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

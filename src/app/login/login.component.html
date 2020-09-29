@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="font-family: sans-serif;">Login</h2>
+            <form [formGroup]="loginForm" novalidate>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="Username" name="Username"><h5>Username</h5></label>
+                        <input type="text" id="Username" name="Username" placeholder="Enter Username" class="form-control" formControlName="Username"/><br>
+                        <div *ngIf="LoginForm.Username.dirty && LoginForm.Username.touched && !LoginForm.Username.pristine"  class="small text-danger">
+                            <span *ngIf="LoginForm.Username.errors?.required">Usrename is required</span>  
+                            <span *ngIf="LoginForm.Username.errors?.maxlength">Username cannot exceed 20 letters</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="Password" name="Password"><h5>Password</h5></label>
+                        <input type="password" id="Password" name="Password" placeholder="Enter Password" class="form-control" formControlName="password"/><br>
+                        <div *ngIf="LoginForm.password.dirty && LoginForm.password.touched && !LoginForm.password.pristine"  class="small text-danger">
+                            <span *ngIf="LoginForm.password.errors?.required">Usrename is required</span>  
+                            <span *ngIf="LoginForm.password.errors?.maxlength">Username cannot exceed 30 letters</span>
+                            <span *ngIf="LoginForm.password.errors?.minlength">Username cannot be less than 3 letters</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="overflow: hidden;">
+                            <div style="float: left;">
+                                <button type="button" [disabled]="!loginForm.valid" class="btn btn-danger" name="submit" id="button" >Login</button>
+                            </div>
+                            <div style="float: right;">
+                                <div style="overflow: hidden;">
+                                    <div style="float: left;">
+                                        New here?  
+                                    </div>
+                                    <div style="float: right;">
+                                        <a href="#" class="text-primary">Signup</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

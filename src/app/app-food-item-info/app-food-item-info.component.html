@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Product Details</h1>
+            <div class="card" style="width: 18rem;">
+                <img [src]="menuitems.imageURL" class="card-img-top" alt="Card image cap">
+                <div class="card-body">
+                    <p>Id : {{menuitems.id}}</p>
+                    <p>Name : {{menuitems.name}}</p>
+                    <p>Price : {{menuitems.price}}</p>
+                    <p *ngIf="menuitems.active else nonPermanentMessage">This item is available</p>
+                    <ng-template #nonPermanentMessage>
+                        <p>This item is not available</p>
+                    </ng-template>
+                    <div [ngSwitch]="menuitems.category">
+                        <p *ngSwitchCase="'MCD'">Main Course</p>
+                        <p *ngSwitchCase="'SD'">Starter</p>
+                        <p *ngSwitchCase="'DD'">Dessert</p>
+                        <p *ngSwitchDefault>Invalid item</p>
+                    </div>
+                    
+                    <p *ngIf="menuitems.active else nonFreeDelievery">This item is available for free delievery</p>
+                    <ng-template #nonFreeDelievery>
+                        <p>This item is not available for free delievey</p>
+                    </ng-template>
+                    
+                </div>
+              </div> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<nav  class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a [routerLink]="['/List_menuitem_admin']" class="navbar-brand text-white">
+        <i class="material-icons align-bottom">
+            local_dining
+        </i>
+        truyum
+    </a>
+    <button class="navbar-toggler text-white" role="button" data-toggle="collapse" data-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse" id="menu">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a [routerLink]="['/List_menuitem_customer']" class="nav-link active text-white">Menu Items</a>
+            </li>
+            <li class="nav-item" class="nav-item ">
+                <a [routerLink]="['/User_admin_login']" class="nav-link active text-white">Login</a>
+            </li>
+            <li class="nav-item" class="nav-item ">
+                <a [routerLink]="['/User_signup']" class="nav-link active text-white">Signup</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+ 
+<router-outlet></router-outlet>

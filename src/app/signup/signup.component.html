@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Signup</h2>
+           <form [formGroup]="signupFrom" novalidate>
+                <div class="form-group">
+                    <label for="Username" name="Username"><h5>Username</h5></label>
+                    <input type="text" id="Username" name="Username" placeholder="Enter Username" class="form-control" formControlName="Username" />
+                    <div class="error-messages">
+                        <ng-container *ngFor="let error of error_messages.Username">
+                            <div class="error-message" *ngIf="signupFrom.get('Username').hasError(error.type) && (signupFrom.get('Username').dirty || signupFrom.get('Username').touched)">
+                                {{ error.message }}
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" name="firstName"><h5>First name</h5></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" class="form-control" formControlName="firstName"/>
+                        <div class="error-messages">
+                            <ng-container *ngFor="let error of error_messages.firstName">
+                                <div class="error-message" *ngIf="signupFrom.get('firstName').hasError(error.type) && (signupFrom.get('firstName').dirty || signupFrom.get('firstName').touched)">
+                                    {{ error.message }}
+                                </div>
+                            </ng-container>
+                        </div><br>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" name="lastName"><h5>Last name</h5></label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" class="form-control" formControlName="lastName"/>
+                        <div class="error-messages">
+                            <ng-container *ngFor="let error of error_messages.lastName">
+                                <div class="error-message" *ngIf="signupFrom.get('lastName').hasError(error.type) && (signupFrom.get('lastName').dirty || signupFrom.get('lastName').touched)">
+                                    {{ error.message }}
+                                </div>
+                            </ng-container>
+                        </div><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="password" name="password"><h5>Password</h5></label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control" formControlName="password"/>
+                        <div class="error-messages">
+                            <ng-container *ngFor="let error of error_messages.password">
+                                <div class="error-message" *ngIf="signupFrom.get('password').hasError(error.type) && (signupFrom.get('password').dirty || signupFrom.get('password').touched)">
+                                    {{ error.message }}
+                                </div>
+                            </ng-container>
+                        </div><br>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="confirmPassword" name="confirmPassword"><h5>Confirm Password</h5></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" class="form-control" formControlName="confirmPassword"/>
+                        <div class="error-messages">
+                            <ng-container *ngFor="let error of error_messages.confirmPassword">
+                                <div class="error-message" *ngIf="signupFrom.get('confirmPassword').hasError(error.type) && (signupFrom.get('confirmPassword').dirty || signupFrom.get('confirmPassword').touched)">
+                                    {{ error.message }}
+                                </div>
+                            </ng-container>
+                        </div><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="form-control btn btn-danger" value ="Save" name="submit" id="button" [disabled]="!signupFrom.valid">Signup</button>
+                </div>
+                <div>
+                    Form Error - {{ signupFrom.errors | json }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

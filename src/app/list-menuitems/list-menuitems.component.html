@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Menu items</h1>
+            <h2 *ngIf="menuList.length==0 else menuBoard">No menu items</h2>
+                <ng-template #menuBoard>
+                <div class="card-deck">
+                    <div *ngFor="let i of menuList" class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div style="overflow: hidden;">
+                                    <h6 style="float: left;  font-size: large" class="text-dark">{{i.name}}</h6>
+                                    <h6 style="float: right; font-size: large" class="text-danger">₹{{i.price}}</h6>
+                                </div>
+                                <div style="overflow: hidden;">
+                                    <p style="float: left;" class="text-muted">{{i.category}}</p>
+                                    <div style="float: right; font-size: large;" >
+                                        <span class="badge badge-info md-18">Free delievery :{{i.freeDelievery}}</span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div style="overflow: hidden;">
+                                    <div style="float: left;" class="text-muted">
+                                        Launch
+                                        <p class="text-muted">{{i.dateOfLaunch}}</p>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
